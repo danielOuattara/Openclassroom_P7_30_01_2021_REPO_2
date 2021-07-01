@@ -1,34 +1,67 @@
 ## Openclassroom_P7_30_01_2021
 
-This is the last project from Openclassrooms training program: Web Developer.
+This is the last project from Openclassrooms training program: Web Developer. <br/>
 The goal here is to built a full stack application for socializing amongst co-workers
-in the firm Groupomania.
+of the Groupomania firm.
 
-### Backend
-The backend use among others: NodeJS, Express, Sequelize, Multer.
-I use sequelize to interact with MySQL. Nodemon is used for testing purpose.
-sequelize-cli needed.
 ### Database 
 The Database is MySQL, as a project requirement
+### Backend
+The backend uses among others: Node.js, Nodemon, Express.js, Sequelize, sequelize-cli, Multer. <br/>
+Sequelize is an ORM, an API used here by Express.js to interact with MySQL database.  <br/> 
+Nodemon is used to simplify the Express.js server multiple restart during the development.
+Sequelize-cli could be needed.
+
 ### Frontend 
 The frontend is built with Vue2, VueX, Vue Router.
 
 ### How to run ?
 
+- first: <b>clone the project folder.</b>
+#### Database
+- install MySQL Server if necessary [+ client (optionnal) ]. Community Edition is enough.
+
+- connect to MySQL server terminal using your credentiels.
+
+  Generally you can run <b> mysql -h localhost -u [your_username] -p </b> <br/>
+
+  Visit: <br/>
+      <a>https://dev.mysql.com/doc/mysql-getting-started/en/</a>  OR <br/> 
+      <a>https://dev.mysql.com/doc/refman/8.0/en/connecting-disconnecting.html</a> for more help.
+
+ - next, confirm you password.
+
+ - once connected, execute the following SQL command : <br/> 
+
+          SOURCE \[path_to...]\groupomania_db_dev_daniel_ouattara.sql ; 
+
+      to create and initialize all tables <br/> 
+
+      note: <b>[path_to...]</b> is the path to <b>groupomania_db_dev_daniel_ouattara.sql</b> file <br/>
+
+      in Windows OS it could be: <b>C:\Users\DBO\Documents\projet7\groupomania_db_dev_daniel_ouattara.sql</b> <br/>
+
+      note: The filname <b>groupomania_db_dev_daniel_ouattara</b> is for convenience only, you can rename it to fillfull your needs.
+
+ - notice: in <b>users</b> table, 2 initial <b>Admin</b> users are provided. <br/> You can user them to create other <b>Admin</b>
+  in the frontend <b>AdminBoard</b>.
+ - initial admins credentials : <br/> <b> email: admin1@test.com, password: admin1@test.com</b>  <br/> <b> email: admin2@test.com, password: admin2@test.com</b>
+ - done.
+
 #### Backend
-- clone the project folder
-- install MySQL Server + [ client ] , Community Edition is enough
+
 - in <b>backend/</b> folder copy <b>env.txt</b> file and save it as <b>.env</b> file
+
 - fill in this .env with your MySQL credentials. Only <b>your_user</b> and <b>your_password</b> need to be changed.
+
+- if you change database file name (groupomania_db_dev_daniel_ouattara) then report it in the .env file.
+
 - open the terminal in the <b>backend</b> folder
+
 - run <b> npm install </b> to install all dependencies
-- run <b> npm i sequelize-cli -g </b> to install sequelize-cli globally or use <b> npx sequelize-cli (command...command) </b> to execute commands whitout installing it
-- run <b> sequelize db:create </b> to create the database
-- from the root folder go to <b> backend/app.js </b>.
-  At line 40, uncomment <b>{force: true}</b>, then start the server: <b>npm run start</b>: Sequelize will force create & synchronize all the tables in the database. 
-   <b> After that, recomment {force: true} again. </b> and  execute <b>ctrl + C</b> to stop the server 
-- run <b> sequelize db:seed:all </b> to seed default needed rows in some tables
+ 
 - run <b> npm run start</b> to start the server
+
 - done
 
 #### Frontend

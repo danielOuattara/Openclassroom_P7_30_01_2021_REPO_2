@@ -118,6 +118,11 @@ exports.signout = async (req, res) => {
         if(!passwordConfirm) {
             return res.status(403).send("Non Authorized !")  
         }
+
+        const filename = user.avatar.split('/avatars/')[1];
+        fs.unlink(`images/avatars/${filename}`, (err) => {
+            if(err) throw err;
+        })
         await user.destroy()
             .then(() => res.status(200).send("Account successfully deleted !"))
         }

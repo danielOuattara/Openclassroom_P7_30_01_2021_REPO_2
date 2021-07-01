@@ -81,8 +81,8 @@ exports.deleteOnePhoto = async (req, res) => {
         if(photo.ownerId !== req.userId && !req.userRoles.includes("ROLE_ADMIN")){
             return res.status(403).json({ Error : "Non Authorized !" })  
         }
-        const photoName = photo.imageUrl.split('/photos/')[1];
-        fs.unlink(`images/photos/${photoName}`, (err) => {
+        const filename = photo.imageUrl.split('/photos/')[1];
+        fs.unlink(`images/photos/${filename}`, (err) => {
           if(err) throw err;
         })
         await photo.destroy();
