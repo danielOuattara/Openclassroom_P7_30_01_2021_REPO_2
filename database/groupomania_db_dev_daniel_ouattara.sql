@@ -15,6 +15,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+DROP DATABASE IF EXISTS `groupomania_dev_daniel_ouattara`;
+CREATE DATABASE `groupomania_dev_daniel_ouattara`; 
+USE `groupomania_dev_daniel_ouattara`;
+
 --
 -- Table structure for table `comments`
 --

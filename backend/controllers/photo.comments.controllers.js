@@ -49,7 +49,6 @@ exports.deleteOneComment = async (req, res) => {
 //----------------------------------------------------------------------------------------
 
 exports.createPhotoCommentReport = async (req, res) => {
-    console.log(req);
     try {
         const photo = await Photo.findOne( { where: { uuid: req.params.photoUuid } });
         if (!photo) {
@@ -74,7 +73,6 @@ exports.createPhotoCommentReport = async (req, res) => {
 // ------------------------------------------------------------------------------------
 
 exports.updateOneComment = async (req, res) => {
-    console.log(req);
     try {
         const photo = await Photo.findOne({ where: {uuid: req.params.photoUuid}})
         if (!photo) {

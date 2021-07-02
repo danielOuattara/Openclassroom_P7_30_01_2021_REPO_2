@@ -118,7 +118,6 @@ export default {
                 const roles =  ["user", "admin"];
                 const special = this.special;
                 const data = {roles, special, ...this.user}
-                console.log(data)
                 const response = await this.$store.dispatch('auth/signin', data)
                 this.message = response;
                 this.successful = true;

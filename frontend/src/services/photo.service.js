@@ -22,7 +22,6 @@ class PhotoService {
     }
     
     createPhotoReport(photoUuid, message) {
-        console.log(photoUuid, message)
         return axios.post(API_URL + `/${photoUuid}/report`, {message}, { headers: authHeader() });
     }
 

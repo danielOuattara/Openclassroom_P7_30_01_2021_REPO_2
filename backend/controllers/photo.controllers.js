@@ -87,7 +87,6 @@ exports.deleteOnePhoto = async (req, res) => {
         })
         await photo.destroy();
         res.status(200).json({ message: ` Photo successfully deleted !`})
-        console.log("hello");
     } catch(err) {
       return res.status(403).json(err.message )
     }

@@ -90,8 +90,6 @@ export default {
               const commentUuid = this.commentUuid;
               const message = this.userMessage
               const data = {photoUuid, commentUuid, message };
-              console.log("Hello");
-              console.log(data);
               const response = await this.$store.dispatch("createPhotoCommentReportAction", data);
               this.message = response.data;
               this.successful = true;
