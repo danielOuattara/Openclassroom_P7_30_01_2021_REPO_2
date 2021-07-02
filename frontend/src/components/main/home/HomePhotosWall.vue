@@ -7,14 +7,14 @@
             <PhotoTitle v-bind:item="photo.title"/>
             <DateOfPosting v-bind:item="photo.createdAt"/>
             <Photo v-bind:item="photo" />
-            <BtnCommentsToggler v-bind:item="photo.uuid" 
-                                v-bind:comments="photo.comments"/> 
+            <BtnCommentsTogglerHome v-bind:item="photo.uuid" 
+                                    v-bind:comments="photo.comments"/> 
             <!-- <PhotoLikes v-bind:item="photo" /> -->
-            <PhotoBtnOptions v-bind:photoOwner="photo.owner" 
+            <PhotoBtnOptionsHome v-bind:photoOwner="photo.owner" 
                              v-bind:photoUuid="photo.uuid"/>
             <ReportPhotoForm class="photo-report-form"  
                              v-bind:photoUuid="photo.uuid"/>
-            <div class="collapse bloc-comment-collapsable" :id="'photo'+photo.uuid">
+            <div class="collapse bloc-comment-collapsable" :id="'photo-home'+photo.uuid">
                 <CommentsWall v-bind:photo="photo"/>
                 <AddPhotoComment v-bind:photoUuid="photo.uuid"/>
             </div>
@@ -29,9 +29,9 @@ import OwnerName     from '../global_components/OwnerName.vue';
 import PhotoTitle    from './../global_components/PhotoTitle';
 import DateOfPosting from './../global_components/DateOfPosting';
 import Photo         from './../global_components/Photo';
-import BtnCommentsToggler from './../global_components/BtnCommentsToggler';
+import BtnCommentsTogglerHome from './../global_components/BtnCommentsTogglerHome';
 // import PhotoLikes    from './../global_components/PhotoLikes';
-import PhotoBtnOptions from '../global_components/PhotoBtnOptions.vue';
+import PhotoBtnOptionsHome from '../global_components/PhotoBtnOptionsHome.vue';
 import ReportPhotoForm from '../global_components/ReportPhotoForm.vue'
 import CommentsWall   from './CommentsWall.vue';
 import AddPhotoComment  from '../global_components/AddPhotoComment.vue';
@@ -44,9 +44,9 @@ export default {
     PhotoTitle,
     DateOfPosting,
     Photo,
-    BtnCommentsToggler,
+    BtnCommentsTogglerHome,
     // PhotoLikes,
-    PhotoBtnOptions,
+    PhotoBtnOptionsHome,
     ReportPhotoForm,
     CommentsWall,
     AddPhotoComment,

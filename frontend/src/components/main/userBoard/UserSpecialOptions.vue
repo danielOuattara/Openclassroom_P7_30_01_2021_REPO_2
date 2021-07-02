@@ -6,8 +6,8 @@
             data-toggle="collapse" data-target="#password-update" 
             aria-expanded="false" aria-controls="password-update">
         Update Password
-            <font-awesome-icon v-if="!updateCollapsed" id="chevron-down" icon="chevron-down" />
-            <font-awesome-icon v-if='updateCollapsed' id="chevron-up" icon="chevron-up" />
+            <font-awesome-icon v-if="!updateCollapsed" class="chevron-down" icon="chevron-down" />
+            <font-awesome-icon v-if='updateCollapsed' class="chevron-up" icon="chevron-up" />
     </button>
     <div class="collapse" id="password-update">
         <div class="card card-body">
@@ -21,8 +21,8 @@
             data-toggle="collapse" data-target="#account-delete" 
             aria-expanded="false" aria-controls="account-delete">
         Delete account
-            <font-awesome-icon v-if="!deleteCollapsed" id="chevron-down" icon="chevron-down" />
-            <font-awesome-icon v-if='deleteCollapsed' id="chevron-up" icon="chevron-up" />
+            <font-awesome-icon v-if="!deleteCollapsed" class="chevron-down" icon="chevron-down" />
+            <font-awesome-icon v-if='deleteCollapsed' class="chevron-up" icon="chevron-up" />
     </button>
     <div class="collapse" id="account-delete">
         <div class="card card-body">
@@ -82,7 +82,7 @@ color: rgb(184, 0, 0);
     }
 }
 
-#chevron-down, #chevron-up{
+.chevron-down, .chevron-up{
   margin-left: 1rem;
 }
  </style>

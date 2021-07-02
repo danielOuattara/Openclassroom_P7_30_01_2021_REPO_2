@@ -1,10 +1,10 @@
 <template>
     <section class="user-data"> 
-        <span type="button"  aria-role="button" tabindex="0" role="button" @click="updateToggler" id="edit-user-data">
+        <span tabindex="0" role="button" @click="updateToggler" id="edit-user-data">
             <font-awesome-icon icon="edit" />
             Edit infos
-            <font-awesome-icon v-if="!formToggler" id="chevron-down" icon="chevron-down" />
-            <font-awesome-icon v-if='formToggler' id="chevron-up" icon="chevron-up" />
+            <font-awesome-icon v-if="!formToggler" icon="chevron-down" />
+            <font-awesome-icon v-if='formToggler'  icon="chevron-up" />
         </span>       
         
         <div class="user-infos">
@@ -51,7 +51,6 @@ export default {
     },
 
     methods: {
-        // ...mapActions(["updateUserAction"]),
 
         updateToggler() {
             this.formToggler = !this.formToggler;
@@ -85,7 +84,5 @@ export default {
     width: 80%;
     margin: auto;
 }
-
-
 
 </style>

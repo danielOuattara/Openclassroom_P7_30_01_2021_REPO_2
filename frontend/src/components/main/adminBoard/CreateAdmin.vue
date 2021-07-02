@@ -51,9 +51,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <span @click="onReset" type="button" class="btn btn-dark btn-block">
+                    <span @click="onReset" class="btn btn-dark btn-block">
                   Cancel
-                    <font-awesome-icon id="icon-times-circle" icon="times-circle" />
+                    <font-awesome-icon class="icon-times-circle" icon="times-circle" />
                 </span>
               </div>
 

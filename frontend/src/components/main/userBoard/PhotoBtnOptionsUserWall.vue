@@ -2,12 +2,12 @@
     <div class="dropdown dropleft">
         <button type="button" 
                 class="btn btn-infos dropdown-toggle photo-options" 
-                id="photoBtnOptions" 
+                :id="'photo-btn-options-user-wall'+photoUuid" 
                 data-toggle="dropdown" 
                 aria-haspopup="true" aria-expanded="false">
             Options
         </button>
-        <div class="dropdown-menu" aria-labelledby="photoBtnOptions">
+        <div class="dropdown-menu" :aria-labelledby="'photo-btn-options-user-wall'+photoUuid">
                 <BtnDeletePhoto v-if="photoOwner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
                                 class="btn-options-photo btn-delete-photo"
                                 v-bind:photoUuid="photoUuid"
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import BtnDeletePhoto from './BtnDeletePhoto';
-import BtnReportPhoto from './BtnReportPhoto';
+import BtnDeletePhoto from './../global_components/BtnDeletePhoto';
+import BtnReportPhoto from './../global_components/BtnReportPhoto';
 export default {
     // props: ['photoOwnerUuid', 'photoUuid'],
     props: {

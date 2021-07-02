@@ -62,7 +62,6 @@
                     <label for="aboutMe">About you : </label>
                     <textarea  name="aboutMe" 
                                placeholder="what about you ?"
-                               type="text" 
                                cols="30" rows="2" 
                                class="form-control"
                                id="aboutMe"
@@ -79,7 +78,7 @@
                             style="backgroundColor:blue">
                         <span v-show="loading" 
                                 class="spinner-border spinner-border-sm"></span>
-                        <span class="">Update profile <font-awesome-icon id="icon-paper-plane-user-data" icon="paper-plane" /></span>
+                        <span class="">Update profile <font-awesome-icon class="icon-paper-plane-user-data" icon="paper-plane" /></span>
                     </button>
                 </div>
             </form>
@@ -200,7 +199,7 @@ label {
     }
 }
 
-#icon-paper-plane-user-data{
+.icon-paper-plane-user-data{
   margin-left: 1rem;
 }
 

@@ -1,17 +1,15 @@
 <template>
     <span class="bloc-container-toggler" 
-          type="button" 
           data-toggle="collapse" 
-          :data-target="'#photo'+item" 
-          aria-role=button
+          :data-target="'#photo-home'+item" 
           tabindex="0"
           role="button"
-          aria-expanded="false" :aria-controls="'photo'+item"
+          aria-expanded="false" :aria-controls="'photo-home'+item"
           @click="onCommentToggleClick"> 
         Comments :
         <span  class="number-of-comments">{{comments.length}} </span>
-        <font-awesome-icon v-if="!toggleClicked" id="chevron-down-comment" icon="chevron-down" />
-        <font-awesome-icon v-if='toggleClicked' id="chevron-up-comment" icon="chevron-up" />
+        <font-awesome-icon v-if="!toggleClicked" class="chevron-down-comment" icon="chevron-down" />
+        <font-awesome-icon v-if='toggleClicked' class="chevron-up-comment" icon="chevron-up" />
     </span>
 </template>
 
@@ -36,7 +34,7 @@ export default {
 
     methods: {
         onCommentToggleClick() {
-            this.toggleClicked = ! this.toggleClicked;
+            this.toggleClicked = !this.toggleClicked;
         }
     }
 }

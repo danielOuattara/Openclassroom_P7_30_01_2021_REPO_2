@@ -2,12 +2,12 @@
     <div class="user-update-background-image" >
         <div>
             <input type="file"
-                   accept="image/jpg image/jpeg image/png"
+                   accept="image/jpg, image/jpeg, image/png"
                    @change="selectAndUpdateAvatar"
                    ref="avatar"
                    style="display:none" />
 
-            <span type="button" aria-role="button" tabindex="0" role="button"
+            <span tabindex="0" role="button"
                   @click="$refs.avatar.click()"> avatar
                 <font-awesome-icon v-if="!fileSelected" id="icon-update-avatar" icon="user-circle"/> 
             </span>

@@ -3,7 +3,7 @@
         {{ comment.content}}
     </p>
     <p v-else class="comment-content"> 
-        <textarea name="" 
+        <textarea name="comment-update-textarea" 
                   id="comment-update-textarea" 
                   cols="29" rows="4" 
                   v-model="newCommentValue">

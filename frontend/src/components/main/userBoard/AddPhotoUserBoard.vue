@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import Photo from "../../../models/photo.js";
+import Photo from "./../../../models/photo.js";
 import { mapActions} from "vuex";
 export default {
     name: "AddPhoto",

@@ -2,8 +2,6 @@
 <template>
   <section class="user-board">  
     <WallHeader/>
-    <SearchUser class="searching"/>
-    <SearchPhoto class="searching" />
     <AddPhoto class="add-photo"/>
     <UserPhotosWall class="user-photos"/>
   </section>
@@ -16,8 +14,6 @@ import {mapActions } from 'vuex';
 import WallHeader from './../components/main/userBoard/WallHeader.vue';
 import AddPhoto from './../components/main/global_components/AddPhoto.vue';
 import UserPhotosWall from './../components/main/userBoard/UserPhotosWall.vue';
-import SearchUser from './../components/main/home/SearchUser.vue';
-import SearchPhoto from './../components/main/home/SearchPhoto.vue';
 
 export default {
     name: 'UserBoard',
@@ -25,9 +21,6 @@ export default {
       WallHeader,
       AddPhoto,
       UserPhotosWall,
-      SearchUser,
-      SearchPhoto,
-
     },
 
     computed: {

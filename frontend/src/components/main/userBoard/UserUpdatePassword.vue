@@ -18,15 +18,15 @@
             </div>
 
             <div class="form-group">
-                <label for="password"> New password : </label>
+                <label for="passwordUpdated"> New password : </label>
                 <input type="password" 
                         placeholder=" enter your new password..."
                         v-model="passwords.password" 
                         v-validate="'required|min:6|max:40'" 
                         class="form-control" 
                         ref="password"
-                        name="password"
-                        id="password"/>
+                        name="passwordUpdated"
+                        id="passwordUpdated"/>
 
                 <div class="alert alert-danger" 
                      v-if="errors.has('password')" 
@@ -52,12 +52,12 @@
             </div>
             
             <div class="form-group">
-                <button class=" btn-update-password btn btn-primary btn-block" 
+                <button class=" btn-update-password btn btn-block" 
                         :disabled="loading">
                     <span v-show="loading" 
                             class="spinner-border spinner-border-sm"></span>
                     <span class="">Send update
-                        <font-awesome-icon id="icon-paper-plane" icon="paper-plane" />
+                        <font-awesome-icon class="icon-paper-plane" icon="paper-plane" />
                     </span>
                 </button>
             </div>
@@ -136,7 +136,7 @@ export default {
 };
 </script>
 
-<style lan="scss" scoped>
+<style lang="scss" scoped>
 
 label {
   display: block;
@@ -148,14 +148,18 @@ label {
 }
 
 .btn-update-password {
-    background: blue;
+    color: white;
+    background: green;
+    &:hover {
+        background: rgb(26, 174, 26);
+    }
 }
 
 .btn-reset-update {
     color: blue;
     &:hover {
-        background: blue;
         color: white;
+        background: blue;
     }
 }
 

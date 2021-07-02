@@ -1,10 +1,10 @@
 <template>
   <!-- Modal start-->
-  <div class="modal fade" id="photoReportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="photoReportModal" tabindex="-1" aria-labelledby="reportPhotoFormModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Photo report form</h5>
+          <h5 class="modal-title" id="reportPhotoFormModalLabel">Photo report form</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -17,7 +17,6 @@
               <label for="aboutMe"> write down your report : </label>
               <textarea name="aboutMe" 
                         placeholder="please, write here ..."
-                        type="text" 
                         cols="30" rows="2" 
                         class="form-control"
                         v-model="userMessage">
@@ -32,7 +31,7 @@
                     <span v-show="loading" class="spinner-border spinner-border-sm"></span>
                     <span>
                       Sent report 
-                      <font-awesome-icon id="icon-paper-plane" icon="paper-plane" />
+                      <font-awesome-icon class="icon-paper-plane" icon="paper-plane" />
                     </span>
                   </button>
                 </div>
@@ -41,7 +40,7 @@
 
           <button type="button" ref="modalCloser" @click="onReset" class="btn btn-secondary" data-dismiss="modal"> 
             Cancel
-            <font-awesome-icon id="icon-times-circle" icon="times-circle" />
+            <font-awesome-icon class="icon-times-circle" icon="times-circle" />
           </button>
         </div>
         <div class="modal-footer" v-if="message || userMessage.length < 5">

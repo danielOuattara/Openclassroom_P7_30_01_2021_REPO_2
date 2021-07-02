@@ -2,12 +2,12 @@
     <div class="dropdown dropleft">
         <button type="button" 
                 class="btn btn-infos dropdown-toggle photo-options" 
-                id="photoBtnOptions" 
+                :id="'photo-btn-option-home'+photoUuid" 
                 data-toggle="dropdown" 
                 aria-haspopup="true" aria-expanded="false">
             Options
         </button>
-        <div class="dropdown-menu" aria-labelledby="photoBtnOptions">
+        <div class="dropdown-menu" :aria-labelledby="'photo-btn-option-home'+photoUuid">
                 <BtnDeletePhoto v-if="photoOwner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
                                 class="btn-options-photo btn-delete-photo"
                                 v-bind:photoUuid="photoUuid"

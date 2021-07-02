@@ -7,13 +7,13 @@
             <PhotoTitle v-bind:item="photo.title"/>
             <DateOfPosting v-bind:item="photo.createdAt"/>
             <Photo v-bind:item="photo" />
-            <BtnCommentsToggler v-bind:item="photo.uuid"
+            <BtnCommentsTogglerUserBoard v-bind:item="photo.uuid"
                                 v-bind:comments="photo.comments"/>
-            <PhotoLikes v-bind:item="photo" />
-            <PhotoBtnOptions v-bind:ownerUuid="userDataGetters.uuid"
+            <!-- <PhotoLikes v-bind:item="photo" /> -->
+            <PhotoBtnOptionsUserWall v-bind:ownerUuid="userDataGetters.uuid"
                              v-bind:photoUuid="photo.uuid"/>
-            <div class="collapse bloc-comment-collapsable" :id="'photo'+photo.uuid">
-                <CommentsWall v-bind:photo="photo"/>
+            <div class="collapse bloc-comment-collapsable" :id="'photo-user-wall'+photo.uuid">
+                <CommentsWallUserBoard v-bind:photo="photo"/>
                 <AddPhotoComment v-bind:photoUuid="photo.uuid"
                                  v-bind:ownerUuid="userDataGetters.uuid"/>
             </div>
@@ -28,10 +28,10 @@ import OwnerName from './../global_components/OwnerName.vue';
 import PhotoTitle from './../global_components/PhotoTitle.vue';
 import DateOfPosting from './../global_components/DateOfPosting.vue';
 import Photo from './../global_components/Photo.vue';
-import BtnCommentsToggler from './../global_components/BtnCommentsToggler.vue';
-import PhotoLikes from './../global_components/PhotoLikes.vue';
-import PhotoBtnOptions from './../global_components/PhotoBtnOptions.vue';
-import CommentsWall from './../home/CommentsWall.vue';
+import BtnCommentsTogglerUserBoard from './BtnCommentsTogglerUserBoard.vue';
+// import PhotoLikes from './../global_components/PhotoLikes.vue';
+import PhotoBtnOptionsUserWall from './PhotoBtnOptionsUserWall.vue';
+import CommentsWallUserBoard from './../home/CommentsWallUserBoard.vue';
 import AddPhotoComment from './../global_components/AddPhotoComment.vue';
 
 export default {
@@ -41,10 +41,10 @@ export default {
         PhotoTitle,
         DateOfPosting,
         Photo,
-        BtnCommentsToggler,
-        PhotoLikes,
-        PhotoBtnOptions,
-        CommentsWall,
+        BtnCommentsTogglerUserBoard,
+        // PhotoLikes,
+        PhotoBtnOptionsUserWall,
+        CommentsWallUserBoard,
         AddPhotoComment,
     },
 

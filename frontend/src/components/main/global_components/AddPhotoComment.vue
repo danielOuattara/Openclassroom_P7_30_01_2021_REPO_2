@@ -2,14 +2,13 @@
   <div class="bloc bloc-new-comment">
       <form name="form" @submit.prevent="addPhotoComment">
         <div class="form-group">
-            <label for="value">Comment : </label>
-            <textarea  name="value"  
+            <label :for="'comment-value'+photoUuid">Comment : </label>
+            <textarea  :name="'comment-value'+photoUuid"  
                        placeholder="comment here..."
-                       type="text" 
                        cols="30" rows="2" 
                        class="form-control"
                        v-model="comment" 
-                       id="value"
+                       :id="'comment-value'+photoUuid"
                        v-validate="'required'" >
             </textarea>
             <div class="alert alert-danger" 
@@ -22,13 +21,13 @@
               <span v-show="loading" class="spinner-border spinner-border-sm"></span>
               <span class="">
                 Post comment
-                <font-awesome-icon id="icon-paper-plane-comment" icon="paper-plane" />
+                <font-awesome-icon class="icon-paper-plane-comment" icon="paper-plane" />
               </span>
             </button>
             <button @click="onCommentReset" class="reset-comment btn btn-dark" type="button" 
                     v-show="comment">
                 Reset
-                <font-awesome-icon id="icon-times-circle-comment" icon="times-circle" />
+                <font-awesome-icon class="icon-times-circle-comment" icon="times-circle" />
             </button>
     
         </div>
@@ -39,7 +38,6 @@
         </div>
     </form>
   </div>
-
 </template>
 
 <script>
@@ -77,7 +75,6 @@ export default {
         const photoUuid = this.photoUuid;
         const comment= this.comment
         const data = { photoUuid, comment }
-        // this.commentSwtich = false;
         await this.$store.dispatch("addPhotoCommentAction", data);
         this.loading = false;
         this.onCommentReset();
@@ -103,30 +100,23 @@ export default {
   padding: 0.35rem 0.65rem;
   color: #0048ff;
   border-radius: 4px;
-  // background: #007bff;
-  // border-radius: 0.25rem;
 }
-
-#icon-paper-plane-comment {
-  margin-left: 0.5rem;
-}
-
 .reset-comment{
   margin-left: 2rem;
-  // background: black;
   color:white;
   padding: 0.4rem 1rem;
   border-radius: 4px;
   position: absolute;
   right: 0;
 }
-
-#icon-times-circle-comment {
+.icon-times-circle-comment {
   margin-left: 1rem;
 }
-
 .post-comment{
   position: relative;
+  .icon-paper-plane-comment {
+    margin-left: 0.5rem;
+  }
 }
 
 </style>

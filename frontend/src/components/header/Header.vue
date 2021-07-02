@@ -1,6 +1,6 @@
 <template>
 <header id="header">
-    <nav id="navbar-main" class=" _upper-nav navbar navbar-expand-md navbar-dark bg-dark main-nav">
+    <nav id="navbar-main" class=" upper-nav navbar navbar-expand-md navbar-dark bg-dark main-nav">
         <a class="navbar-brand" tabindex="0" role="button" @click.prevent>
             <router-link to="/home">
                 <img src="./../../assets/images/image_Groupomania/icon-left-font-monochrome-white.svg" 
@@ -8,8 +8,7 @@
                     alt="image logo Groupomania"
                     id="image-logo"
                     tabindex="0"
-                    role="button"
-                    aria-role="button"/>
+                    role="button"/>
             </router-link>
         </a>
 
@@ -23,17 +22,17 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <router-link to="/home" class="nav-link" >
-                            <font-awesome-icon icon="home" /> Home
+                            <font-awesome-icon icon="home"/> Home
                         </router-link>
                     </li>
                     <li v-if="showAdminBoard" class="nav-item">
                         <router-link to="/admin" class="nav-link" >
-                            <font-awesome-icon icon="user-shield" /> Admin
+                            <font-awesome-icon icon="user-shield"/> Admin
                         </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link v-if="currentUser" to="/user" class="nav-link" > 
-                            <font-awesome-icon icon="user" /> User Board
+                            <font-awesome-icon icon="user"/> User Wall
                         </router-link>
                     </li>
                 </ul>
@@ -43,12 +42,12 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <router-link to="/signin" class="nav-link" >
-                            <font-awesome-icon class="font-a-icon" icon="user-plus" /> Signin
+                            <font-awesome-icon class="font-a-icon" icon="user-plus"/> Signin
                         </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link to="/login" class="nav-link"  >
-                            <font-awesome-icon id="icon" icon="sign-in-alt" /> Login
+                            <font-awesome-icon id="icon" icon="sign-in-alt"/> Login
                         </router-link>
                     </li>
                 </ul>
@@ -58,7 +57,7 @@
                 <ul id="navbar-nav" class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#" @click.prevent="logOut">
-                            <font-awesome-icon icon="sign-out-alt" />LogOut
+                            <font-awesome-icon icon="sign-out-alt"/>LogOut
                         </a>
                     </li>
                 </ul>
@@ -105,10 +104,6 @@ export default {
 
 #navbar-main {
     background: rgba(16, 33, 80, 0.9)!important;
-}
-
-#navbar-nav:hover {
-    padding: -2px;
 }
 
 .nav-link {

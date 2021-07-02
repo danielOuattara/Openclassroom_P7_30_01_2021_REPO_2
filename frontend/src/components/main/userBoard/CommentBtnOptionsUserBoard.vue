@@ -2,15 +2,15 @@
     <div class="dropdown dropup">
         <button type="button" 
                 class="btn btn-infos dropdown-toggle comment-more-options" 
-                id="dropdownMenuOffset" 
+                :id="'comment-user-wall-btn-options'+comment.uuid" 
                 data-toggle="dropdown" 
                 data-offset="-60,0"
                 aria-haspopup="true" aria-expanded="false" > 
             Options
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+        <div class="dropdown-menu" :aria-labelledby="'comment-user-wall-btn-options'+comment.uuid">
             <BtnUpdatePhotoComment v-if="comment.owner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
-                                class=" btn-comment-options btn-update-comment"  />
+                                   class=" btn-comment-options btn-update-comment"  />
             <BtnDeletePhotoComment class=" btn-comment-options btn-delete-comment"
                                 v-show="comment.owner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"
                                 v-bind:commentUuid="comment.uuid"
@@ -22,9 +22,9 @@
 
 <script>
 
-import BtnUpdatePhotoComment from './BtnUpdatePhotoComment.vue';
-import BtnDeletePhotoComment from './BtnDeletePhotoComment.vue';
-import BtnReportPhotoComment from './BtnReportPhotoComment.vue';
+import BtnUpdatePhotoComment from '../global_components/BtnUpdatePhotoComment.vue';
+import BtnDeletePhotoComment from '../global_components/BtnDeletePhotoComment.vue';
+import BtnReportPhotoComment from '../global_components/BtnReportPhotoComment.vue';
 
 export default {
     props: ['comment','photoUuid'],
@@ -37,11 +37,6 @@ export default {
         currentUser() {
             return this.$store.state.auth.user;
         },
-
-        // received() {
-        //     return this.props;
-        // },
-
     },
 }
 </script>
@@ -78,7 +73,7 @@ export default {
     }
 }
 
-#dropdownMenuOffset {
+#commentBtnOptions {
     grid-row: 1 /span 1 ;
     grid-column: 7/ span 1;
     border: 1px solid grey!important;

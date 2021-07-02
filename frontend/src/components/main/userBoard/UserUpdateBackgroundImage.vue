@@ -2,12 +2,12 @@
     <div class="user-update-background-image" >
         <div>
             <input type="file"
-                   accept="image/jpg image/jpeg image/png"
+                   accept="image/*"
                    @change="selectAndUpdateBackgroundImage"
                    ref="backgroundImage"
                    style="display:none" />
 
-            <span type="button" aria-role="button" tabindex="0" role="button"
+            <span tabindex="0" role="button"
                   @click="$refs.backgroundImage.click()"> background
                 <font-awesome-icon v-if="!fileSelected" id="icon-update-background" icon="image"/> 
             </span>
