@@ -11,7 +11,7 @@
                                 v-bind:comments="photo.comments"/>
             <!-- <PhotoLikes v-bind:item="photo" /> -->
             <PhotoBtnOptionsUserWall v-bind:ownerUuid="userDataGetters.uuid"
-                             v-bind:photoUuid="photo.uuid"/>
+                                     v-bind:photoUuid="photo.uuid"/>
             <div class="collapse bloc-comment-collapsable" :id="'photo-user-wall'+photo.uuid">
                 <CommentsWallUserBoard v-bind:photo="photo"/>
                 <AddPhotoComment v-bind:photoUuid="photo.uuid"
@@ -31,7 +31,7 @@ import Photo from './../global_components/Photo.vue';
 import BtnCommentsTogglerUserBoard from './BtnCommentsTogglerUserBoard.vue';
 // import PhotoLikes from './../global_components/PhotoLikes.vue';
 import PhotoBtnOptionsUserWall from './PhotoBtnOptionsUserWall.vue';
-import CommentsWallUserBoard from './../home/CommentsWallUserBoard.vue';
+import CommentsWallUserBoard from './CommentsWallUserBoard.vue';
 import AddPhotoComment from './../global_components/AddPhotoComment.vue';
 
 export default {
@@ -125,14 +125,7 @@ article.photo-bloc {
     grid-row: 3 / span 4;
     grid-column: 1 / span 6;
 }
-.bloc-container-toggler {
-    grid-row: 7 / span 1;
-    grid-column: 1/ span 2;
-    font-size: 0.9rem;
-    padding: 1rem 0 0.75rem 0;
-    margin-bottom: 1rem;
-    border-bottom:2px dotted blue;
-}
+.bloc-container-toggler { }
 
 /* -------- comment styling */
 .bloc-comment-collapsable {

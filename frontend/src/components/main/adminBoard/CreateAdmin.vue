@@ -1,8 +1,15 @@
 
 <template>
     <div class="create-admin">
-        <h2>Create Admin</h2>
-             <form name="form" @submit.prevent="createAdmin">
+        <h2> Admin Board</h2>
+        <p>
+        <button class="btn btn-dark btn-create-admin" type="button" data-toggle="collapse" data-target="#create-admin" aria-expanded="false" aria-controls="create-admin">
+         Create an admin
+        </button>
+        </p>
+        <div class="collapse" id="create-admin">
+        <div class="card card-body">
+                        <form name="form" @submit.prevent="createAdmin">
 
                 <div class="form-group">
                     <label for="email">Enter an e-mail : </label>
@@ -72,9 +79,10 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        </div>
+        </div>
     </div>
 </template>
-
 
 <script>
 import User from './../../../models/user';
@@ -137,10 +145,10 @@ export default {
 <style lang="scss" scoped>
 
 .create-admin {
-    border: 1px solid grey;
+    // border: 1px solid grey;
     margin: 2rem 0;
-    padding: 2rem;
-    border-radius: 5px;
+    // padding: 2rem;
+    // border-radius: 5px;
 }
 
 h2 {

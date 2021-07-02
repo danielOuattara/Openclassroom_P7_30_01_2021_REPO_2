@@ -11,7 +11,7 @@
                                     v-bind:comments="photo.comments"/> 
             <!-- <PhotoLikes v-bind:item="photo" /> -->
             <PhotoBtnOptionsHome v-bind:photoOwner="photo.owner" 
-                             v-bind:photoUuid="photo.uuid"/>
+                                 v-bind:photoUuid="photo.uuid"/>
             <ReportPhotoForm class="photo-report-form"  
                              v-bind:photoUuid="photo.uuid"/>
             <div class="collapse bloc-comment-collapsable" :id="'photo-home'+photo.uuid">
@@ -144,24 +144,24 @@ article.photo-bloc {
 }
 .bloc-container-toggler {
     grid-row: 7 / span 1;
-    grid-column: 1/ span 2;
+    grid-column: 1/ span 3;
     font-size: 0.9rem;
-    padding: 1rem 0 0.75rem 0;
-    margin-bottom: 1rem;
-    border-bottom:2px dotted blue;
+    padding: 0.2rem  0.5rem 0.2rem;
+    margin: 1rem 0;
+    background: rgba(191, 215, 223, 0.529);
+    border-radius: 0.2rem;
+    font-weight: 600;
+    &:hover {
+      border-bottom:0.16rem dotted grey;
+      padding: 0.12rem  0.5rem 0.12rem;
+    }
 }
-
-// .photo-report-form {
-//   z-index: 5!important;
-//   position: absolute;
-// }
 
 /* -------- comment styling */
 .bloc-comment-collapsable {
     grid-row: 8 ;
     grid-column: 1 / span 6;
 }
-
 
 .bloc-new-comment { /* STDBY */
     grid-row: 8 / span 4;

@@ -1,30 +1,26 @@
 
 <template>
- 
         <section class="user-report">
-            <button @click="getPhotosReports" >Click to get photo reports</button>
+            <button @click="getPhotosReports" class="btn btn-dark" >Click to get photo reports</button>
             <!-- <p>{{this.photosReportsGetters}}</p> -->
             <div v-for="report, index in photosReportsGetters" :key="index" class="report-container">
-                <div class="sender infos">
+                <div class="sender-infos">
                     <h2> Report sender</h2>
                     <p> id: {{report.ownerId}}</p>
                     <p> firstName: {{report.owner.firstName}}</p>
                     <p> lastName: {{report.owner.lastName}}</p>
                     <p> email : {{report.owner.email}}</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="photo infos" >
+                    </div>
+                <div class="photo-infos" >
                     <h2>Photo reported</h2>
                     <p>photo.id : {{report.photoId}}</p>
-                    <p>{{report.message}}</p>
-                    <p>{{report.status}}</p>
-                    <p>{{report.createdAt}}</p>
-                    <p>{{report.photoId}}</p>
+                    <p>message: {{report.message}}</p>
+                    <p>status: {{report.status}}</p>
+                    <p>date: {{report.createdAt}}</p>
+                    <p>photoId: {{report.photoId}}</p>
                      <img :src="report.owner.avatar" alt="owner avatar" style="max-width: 15%">
                 </div>
-                <div class="target-person infos">
+                <div class="photo-owner-infos">
                     <h2>Photo owner infos</h2>
                     <p> id: {{report.photo.ownerId}}</p>
                     <p>firstName: {{report.photo.owner.firstName}}</p>
@@ -49,13 +45,6 @@ export default {
 
     mounted() {        
         this.getPhotosReportsAction(); // automatic action
-        //   UserService.getAdminBoard()
-        //   .then( response => {
-        //     this.content = response.data
-        //   })
-        //   .catch( err => {
-        //       this.content = (err.response && err.response.data) || err.message || err.toString();
-        //   })
         if (!this.currentUser) {
             this.$router.push('/login');
         }
@@ -99,12 +88,11 @@ export default {
     margin-top: 2rem;
     height: auto;
     
-  
-    @media screen and (min-width: 740px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+    // @media screen and (min-width: 740px) {
+    //     flex-direction: row;
+    //     flex-wrap: wrap;
+    //     justify-content: space-evenly;
+    // }
 }
 
 h2 {
@@ -116,6 +104,9 @@ h2 {
     margin-top: 2rem;
     padding-top: 1rem;
     margin:auto;
+}
+p {
+    font-size: 0.9rem;
 }
 
 

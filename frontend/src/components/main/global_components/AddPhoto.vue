@@ -21,9 +21,8 @@
 
               <div class="form-group">
                 <label for="filename" 
-                       id="image-label" 
                        @click="$refs.imageFile.click()"
-                       class= "btn btn-primary btn-block"
+                       class= "btn btn-block image-label"
                        style="background:blue"> 
                     <span v-if="!fileSelected">Click to choose a photo </span>
                     <span v-if="fileSelected" id="photo-is-selected"> Photo Selected</span>
@@ -140,6 +139,12 @@ h2 {
   padding-bottom: 1rem;
   margin-top: 2rem;
 }
+
+.image-label {
+  color: black;
+  background: rgb(191, 215, 223)!important;
+}
+
 #icon-add-photo{
   margin-left: 1rem;
 }

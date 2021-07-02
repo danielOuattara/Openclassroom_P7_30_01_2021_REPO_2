@@ -2,7 +2,7 @@
 // ADMIN ROUTES
 
 const router = require('express').Router();
-const { authJwt} = require("./../middleware");
+const { authJwt } = require("./../middleware");
 const controller = require("./../controllers/admin.controllers");
 
 /* Reports  

@@ -8,21 +8,18 @@
             Options
         </button>
         <div class="dropdown-menu" :aria-labelledby="'photo-btn-options-user-wall'+photoUuid">
-                <BtnDeletePhoto v-if="photoOwner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
+                <BtnDeletePhoto v-if="photoOwner.uuid == currentUser.uuid || ownerUuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
                                 class="btn-options-photo btn-delete-photo"
                                 v-bind:photoUuid="photoUuid"
                                 v-bind:ownerUuid="ownerUuid"/>
-                <BtnReportPhoto v-if="ownerUuid != currentUser.uuid"
-                                class="btn-options-photo btn-report-photo"/>
         </div>
     </div>
 </template>
 
 <script>
 import BtnDeletePhoto from './../global_components/BtnDeletePhoto';
-import BtnReportPhoto from './../global_components/BtnReportPhoto';
+
 export default {
-    // props: ['photoOwnerUuid', 'photoUuid'],
     props: {
         photoUuid: {
             type: String,
@@ -42,7 +39,6 @@ export default {
 
     components: {
         BtnDeletePhoto,
-        BtnReportPhoto,
     },
 
     computed: {

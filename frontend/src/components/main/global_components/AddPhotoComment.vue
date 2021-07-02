@@ -29,7 +29,6 @@
                 Reset
                 <font-awesome-icon class="icon-times-circle-comment" icon="times-circle" />
             </button>
-    
         </div>
         <div class="form-group">
             <div v-if="message" class="alert alert-danger" role="alert">
@@ -77,8 +76,8 @@ export default {
         const data = { photoUuid, comment }
         await this.$store.dispatch("addPhotoCommentAction", data);
         this.loading = false;
-        this.onCommentReset();
         this.getAllPhotosAction();
+        this.onCommentReset();
         if (this.ownerUuid) {
           this.getOneUserAction(this.ownerUuid);
         }

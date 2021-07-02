@@ -12,7 +12,7 @@
                                 class="btn-options-photo btn-delete-photo"
                                 v-bind:photoUuid="photoUuid"
                                 v-bind:ownerUuid="ownerUuid"/>
-                <BtnReportPhoto v-if="ownerUuid != currentUser.uuid"
+                <BtnReportPhoto v-if="photoOwner.uuid != currentUser.uuid"
                                 class="btn-options-photo btn-report-photo"/>
         </div>
     </div>
@@ -22,7 +22,6 @@
 import BtnDeletePhoto from './BtnDeletePhoto';
 import BtnReportPhoto from './BtnReportPhoto';
 export default {
-    // props: ['photoOwnerUuid', 'photoUuid'],
     props: {
         photoUuid: {
             type: String,

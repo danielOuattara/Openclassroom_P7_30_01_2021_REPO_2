@@ -1,7 +1,6 @@
 
-// const db = require("./../models");
+
 const { User, Photo, Comment, Like, PhotosReports } = require('./../models');
-// const Op = db.Sequelize.Op;
 const fs = require("fs");
 
 //-----------------------------------------------------------------------------------------

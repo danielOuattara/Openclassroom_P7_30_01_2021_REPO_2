@@ -1,6 +1,6 @@
 <template>
   <!-- Modal -->
-  <div class="modal fade" id="photoCommentReportModal" tabindex="-1" aria-labelledby="ReportPhotoCommentFormModalLabel" aria-hidden="true">
+  <div class="modal fade" :id="'photoCommentReportModal'+commentUuid+'-'+photoUuid" tabindex="-1" aria-labelledby="ReportPhotoCommentFormModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

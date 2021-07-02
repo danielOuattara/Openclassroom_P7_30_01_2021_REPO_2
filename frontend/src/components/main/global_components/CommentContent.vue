@@ -36,7 +36,9 @@ export default {
     },
     computed: {
       ...mapGetters(["getShowCommentUpdate"]),
-
+      currentUser() {
+          return this.$store.state.auth.user;
+        },
     },
 
     methods: {

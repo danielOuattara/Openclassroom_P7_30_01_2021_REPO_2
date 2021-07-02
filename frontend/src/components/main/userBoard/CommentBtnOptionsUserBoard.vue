@@ -12,10 +12,13 @@
             <BtnUpdatePhotoComment v-if="comment.owner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"  
                                    class=" btn-comment-options btn-update-comment"  />
             <BtnDeletePhotoComment class=" btn-comment-options btn-delete-comment"
-                                v-show="comment.owner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"
-                                v-bind:commentUuid="comment.uuid"
-                                v-bind:photoUuid="photoUuid" />
-            <BtnReportPhotoComment class=" btn-comment-options btn-report-comment"/>
+                                   v-show="comment.owner.uuid == currentUser.uuid || currentUser.roles.includes('ROLE_ADMIN')"
+                                   v-bind:commentUuid="comment.uuid"
+                                   v-bind:photoUuid="photoUuid" />
+            <BtnReportPhotoComment class=" btn-comment-options btn-report-comment"
+                                   v-if="comment.owner.uuid !== currentUser.uuid"
+                                   v-bind:commentUuid="comment.uuid"
+                                   v-bind:photoUuid="photoUuid"/>
         </div>
     </div>
 </template>

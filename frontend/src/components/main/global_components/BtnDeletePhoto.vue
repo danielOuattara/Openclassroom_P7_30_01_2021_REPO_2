@@ -17,7 +17,7 @@ export default {
     },
 
     methods: {
-        ...mapActions(["deleteOnePhotoAction", "getAllPhotosAction","getOneUserAction"]),
+        ...mapActions(["deleteOnePhotoAction", "getAllPhotosAction", "getOneUserAction"]),
 
       async deletePhoto() {
           try {
@@ -36,9 +36,6 @@ export default {
               this.message = (error.response && error.response.data) || error.message || error.toString();
           }
       },
-
   },
 };
 </script>
-
-<style lang="scss" scoped> </style>
