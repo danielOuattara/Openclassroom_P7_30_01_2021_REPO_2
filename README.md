@@ -1,14 +1,17 @@
 ## Openclassroom_P7_30_01_2021
 
 This is the last project of Openclassrooms training program: Web Developer. <br/>
-The goal is to built a full stack application for socializing amongst co-workers
+The goal is to build a full stack application for socializing amongst co-workers
 of the Groupomania firm.
+
+Once the project cloned, please head to <b>/backend/package.json</b> or <b>/frontend/package.json</b> 
+to get more informations. <br/>
 
 ### Database
 The Database is MySQL, as a project requirement.
 ### Backend
 The backend uses among others: Node.js, Nodemon, Express.js, Sequelize, sequelize-cli, Multer. <br/>
-Sequelize is an ORM, an API, used by Express.js to interact with MySQL database. <br/> 
+Sequelize is an ORM, an API, used by Express.js to interact with MySQL database. <br/>
 
 ### Frontend 
 The frontend is built with Vue2, VueX, Vue Router.
@@ -24,7 +27,7 @@ The frontend is built with Vue2, VueX, Vue Router.
 
 -  <b>open a terminal windows and navigate to the location of the database folder in the project tree. </b>
 
-- connect to MySQL server terminal using your credentiels.In general you can run :  <br/>
+- connect to MySQL server terminal using your credentiels. In general you can run :  <br/>
 
         mysql -h localhost -u [your_username] -p
 
@@ -40,12 +43,14 @@ The frontend is built with Vue2, VueX, Vue Router.
 
 to create and initialize all tables.<br/> 
 
-  -> note: The filname <b>groupomania_db_dev_daniel_ouattara</b> is for convenience only, you can rename it to fillfull your needs.
+ - note: The filname <b>groupomania_db_dev_daniel_ouattara</b> is for convenience only, you can rename it to fillfull your needs.
 
-- notice: in <b>users</b> table, 2 initial <b>Admin</b> users are provided. <br/> You can user them to create other <b>Admin</b>
+- <b>notice</b>: initial admins credentials in <b>users</b> table: <br/> 
+  <b> email: admin1@test.com, password: admin1@test.com</b>  <br/> 
+  <b> email: admin2@test.com, password: admin2@test.com</b> <br/>
+  You can user them to create other <b>Admin</b>
   in the frontend <b>AdminBoard</b>.
 
-- initial admins credentials : <br/> <b> email: admin1@test.com, password: admin1@test.com</b>  <br/> <b> email: admin2@test.com, password: admin2@test.com</b>
 
 - check the database to confirm !
 
