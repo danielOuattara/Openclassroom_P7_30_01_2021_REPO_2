@@ -5,6 +5,7 @@ const db = require("./../models");
 const { User, Role } = require('./../models');
 const Op = db.Sequelize.Op;
 const jwt = require("jsonwebtoken");
+const fs =  require('fs');
 
 //--------------------------------------------------------------------------
 
@@ -100,7 +101,6 @@ exports.logout = async (req, res) => {
         return res.status(500).send(err.message)
     }
 }
-
 
 //-------------------------------------------------------------------------------------------------
 
